@@ -18,7 +18,7 @@ def run_profile_report(csv):
     df = pd.read_csv(csv)
     profile = df.profile_report(title="Demographic Analysis",
                                 dataset={
-                                    "description": "This profiling report was generated for Explore Hacks by Sarah Dufays, Jennifer Chiou, Mudit Marwaha, and Alizain Fatehali",
+                                    "description": "This profiling report was generated for Explore Hacks by Sarah Dufays, Jennifer Chiou, Mudit Marwaha, and Angelina Wu",
                                     "copyright_holder": "Sarah Dufays",
                                     "copyright_year": "2021"
                                 })
