@@ -112,7 +112,7 @@ def diversity_print(csv):
         f.write("Consider hiring diversely. One or more minorities is underrepresented within your company (please view the pie chart for more detail), which can stifle creativity.</br></br>")
         diversity_score = diversity_score - 1
     else:
-        f.write("You have representation from %d different races in your company! Check the pie chart of your company's Race Distribution to ensure that minorities are fairly represented.</br></br>" % num_races)
+        f.write("You have representation from %d different races in your company! Check the pi chart of your company's Race Distribution to ensure that minorities are fairly represented.</br></br>" % num_races)
 
     f.write(" </br> </br> <span style= 'font-size: 60px'> <b><center>YOUR DIVERSITY SCORE: On a scale of 0-5 (5 being the most diverse), you have a score of <u>" + str(diversity_score) + "</u>. </center> </b> </span>")
     f.write("</p></body> </font>")
