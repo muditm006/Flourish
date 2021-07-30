@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "utf-8">
+		<title> Developing Diversity </title>
+		<style>
+			div.b
+			{
+				* {box-sizing: border-box}
+				body {font-family: "Lato", sans-serif;}
+
+				/* Style the tab */
+				.tab {
+				  float: left;
+				  border: 1px solid #ccc;
+				  background-color: #f1f1f1;
+				  width: 30%;
+				  height: 300px;
+				}
+
+				/* Style the buttons inside the tab */
+				.tab button {
+				  display: block;
+				  background-color: inherit;
+				  color: black;
+				  padding: 22px 16px;
+				  width: 100%;
+				  border: none;
+				  outline: none;
+				  text-align: left;
+				  cursor: pointer;
+				  transition: 0.3s;
+				  font-size: 17px;
+				}
+
+				/* Change background color of buttons on hover */
+				.tab button:hover {
+				  background-color: #ddd;
+				}
+
+				/* Create an active/current "tab button" class */
+				.tab button.active {
+				  background-color: #ccc;
+				}
+
+				/* Style the tab content */
+				.tabcontent {
+				  float: left;
+				  padding: 0px 12px;
+				  border: 1px solid #ccc;
+				  width: 70%;
+				  border-left: none;
+				  height: 300px;
+				}
+			}
+			div.a
+			{
+				text-align: center;
+			}
+			* {box-sizing: border-box}
+
+			/* Set height of body and the document to 100% */
+			body, html {
+			  height: 100%;
+			  margin: 0;
+			  font-family: Times New Roman;
+			}
+
+			/* Style tab links */
+			.tablink {
+			  background-color: #555;
+			  color: white;
+			  float: left;
+			  border: none;
+			  outline: none;
+			  cursor: pointer;
+			  padding: 14px 16px;
+			  font-size: 17px;
+			  width: 25%;
+			}
+
+			.tablink:hover {
+			  background-color: #777;
+			}
+
+			/* Style the tab content (and add height:100% for full page content) */
+			.tabcontent {
+			  color: black;
+			  display: none;
+			  padding: 100px 20px;
+			}
+			
+		
+			
+			#Home {background-color: #181818;}
+			#About {background-color: #ffbdef;}
+			#Analytics {background-color: #71EFA3;}
+			#Solutions {background-color: #a6f2e7;}
+			
+		</style>
+	</head>
+	<body style="background-color:#71EFA3;">
+		<!--<div class="a">
+		<font face = "Brush Script MT" size = "5">
+		<header style= "font-size: 100px;">
+			Developing Diversity
+		</header></header></font><br />
+		</div>-->
+	<button class="tablink" onclick="openPage('Home', this, 'black')"  id="defaultOpen">Home</button>
+	<button class="tablink" onclick="openPage('About', this, 'black')">About</button>
+	<button class="tablink" onclick="openPage('Analytics', this, 'black')">Analytics</button>
+	<button class="tablink" onclick="openPage('Solutions', this, 'black')">Solutions</button>
+	<div id="Home" class="tabcontent">
+	  <center>
+	  <h1 style= "font-size:30px; color: white"> 
+	  <font face = "Courier">
+	  Welcome to <span style= "font-size: 60px"><font face= "Lucida Handwriting">Flourish </span></font></font>
+	  </h1>
+	  <img class="animated-gif" src = "{{url_for('static', filename= 'images/Flourish.gif')}}" ></img>
+	  <font face = "Courier">
+	  <h1 style= "font-size:40px; color: white">
+	  "Growing Your Company Through Inclusion!"
+	  </h1>
+	  </font>
+	  </center>
+	  
+	</div>
+
+	<div id="Analytics" class="tabcontent">
+		<div class="a"><font face = "Courier"><header style= "font-size: 35px"> <u> Analyze Your Companies Diversity Equity and Inclusion (DEI) </br ></u> </header></font></div></br>
+		<!--<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@MuditMarwaha/tester?lite=true&outputonly-1"</iframe>
+		<div class= "a"><font face = "Courier"><header style= "font-size: 35px"><a href="https://gitlab.com/pl238462/developing-diversity/-/blob/main/DEI_Algorithm.py"> <b>D.E.I. Algorithm </b> </a>
+		</header></font> </div>--> </br>
+		<center>
+			<font face = "Courier"><button type="button" style="height:200px;width:500px; font-size: 50px ;background-color: #cdea48"><a href=diversity target="_blank">Diversity</a></button></font>
+			<font face = "Courier"><button type="button" style="height:200px;width:500px; font-size: 50px ;background-color: #cdea48"><a href=equity target="_blank">Equity</a></button></font>
+			<font face = "Courier"><button type="button" style="height:200px;width:500px; font-size: 50px ;background-color: #cdea48"><a href=inclusion target="_blank">Inclusion</a></button></font>
+		</center>
+		<!--<div class= "a"><video controls loop width="1000" height="500">
+			<source src = "{{url_for('static', filename= 'images/graphs.mov')}}"  type="video/mov"></source>
+			<source src = "{{url_for('static', filename= 'images/graphs.mp4')}}" type="video/mp4"></source>
+			Your browser does not support the video tag.
+		</video>-->
+		</br> </br>
+		<center><font face = "Courier"><header style= "font-size: 35px"> <u> Send us your statistics and get your results today! </u> </header></font> </center></br></div>
+	</div>
+
+	<div id="Solutions" class="tabcontent">
+		<div class="a"><font face = "Courier"><header style= "font-size: 40px"> <u> How To Make Your Business More Diverse Today </u> </header></font></div></br>
+		</br>
+		<font face = "Courier"><header style= "font-size: 35px"> <b>How to Increase Diversity: </b> </header></font></br> 
+		<p style= "font-size: 20px"> 
+		To begin with, highlight diversity in your company’s career page and offer targeted scholarships/internships and diverse mentorships. </br>
+		Diversity and cultural sensitivity training would also be beneficial. </br>
+		Ask employees to refer job candidates they know from under-represented groups in your company and offer rewards or bonuses for recommending diverse candidates who join the company. </br></p>
+		<div class="a"><img src = "{{url_for('static', filename= 'images/People-removebg-preview.png')}}" style="width:900px;height:400px;"></div>
+		<font face = "Courier"><header style= "font-size: 35px"> <b>How to Increase Inclusivity: </b> </header></font></br>
+		<p style= "font-size: 20px"> 
+		First, educate managers about the importance of inclusion, since managers act as the bridge between employees and management.
+		This can be done through workshops or training sessions that work to combat unconscious bias, improving the work environment (for example, adding gender neutral bathrooms), and having an employee feedback system. </br>
+		Then, create a system to hold employees accountable, such as a diversity panel, and monitor employee experiences. </br>
+		It is also beneficial to celebrate differences, for example, by recognizing and celebrating days with significance to other communities, such as Black History Month in February, Pride Month in June, etc. </br>
+		Ensure that every new hire is made aware that your company is a safe place for every gender, race, culture, or disability, and emphasize the importance of using the correct pronouns. </br>
+		</p>
+		<div class="a"><img src = "{{url_for('static', filename= 'images/People_Hands-removebg-preview.png')}}" style="width:900px;height:400px;"></div>
+		<font face = "Courier"><header style= "font-size: 35px"> <b> How to Increase Equity: </b> </header></font></br>
+		<p style="font-size:20px">
+		The first step is to build consensus about the problem: a lack of equity. Then, identify where it comes from. </br>
+		This is important because if employees do not understand the problem, initiatives to build equity will be perceived negatively and will be more difficult to implement.</br>
+		After that, a model called the PRESS model by the Harvard Business Review can be applied. </br>
+		</p>
+		<font face = "Courier"><header style= "font-size: 35px"> <u>Harvard PRESS Model Breakdown</u> </header></font></br>
+		<p style= "font-size: 20px"> Click on the buttons to view the different steps of the model:</p>
+		<div class="b">
+		<div class= "a">
+		  <button class="tablinkss" onclick="openCity(event, 'Stage 1')" id="defaultsOpen" style="height:50px;width:200px; font-size: 18px ; background-color: #d75e5b">Problem Awareness</button>
+		  <button class="tablinkss" onclick="openCity(event, 'Stage 2')" style="height:50px;width:200px; font-size: 18px ;background-color: #d7955b">Root-Cause Analysis</button>
+		  <button class="tablinkss" onclick="openCity(event, 'Stage 3')"style="height:50px;width:200px; font-size: 18px; background-color: #dde54d">Empathy</button>
+		  <button class="tablinkss" onclick="openCity(event, 'Stage 4')"style="height:50px;width:200px; font-size: 18px; background-color: #95ec7a">Strategy</button>
+		  <button class="tablinkss" onclick="openCity(event, 'Stage 5')"style="height:50px;width:200px; font-size: 18px; background-color: #a6acf2">Sacrifice</button>
+		 
+		 </div>
+		</div>
+
+		<div id="Stage 1" class="tabcontents" style= "background-color: #d75e5b">
+			<p style="font-size:20px ">
+				The first stage is Problem Awareness, in which the company must identify the problem. </br></br>
+			</p>
+		</div>
+
+		<div id="Stage 2" class="tabcontents" style= "background-color: #d7955b">
+			<p style="font-size:20px"> 
+				The second stage is Root-Cause Analysis, in which the company must locate the problems main source. </br>
+				For example, the problem of racism may be caused by psychological factors (such as cognitive bias), but it mostly results from structural factors (such as established laws, institutional practices, and cultural norms). </br>
+				If a workplace targets and blames individuals for racism without taking a step back and seeing if their organizational structure is contributing to the discrimination, it will fail to increase equity.</br>
+				</p>
+		</div>
+
+		<div id="Stage 3" class="tabcontents" style= "background-color: #dde54d">
+			<p style="font-size:20px">
+				The third stage is Empathy, which can be promoted through exposure and education about discrimination/inequality. </br></br>
+			</p>
+		</div>
+		<div id="Stage 4" class="tabcontents" style= "background-color: #95ec7a">
+			<p style="font-size:20px">
+				The fourth stage is Strategy, which outlines how to solve the problem. </br>
+				Most actionable strategies for change address three distinct but interconnected categories: personal attitudes, informal cultural norms, and formal institutional policies. </br>
+			</p>
+		</div>
+		<div id="Stage 5" class="tabcontents" style= "background-color: #a6acf2">
+			<p style="font-size:20px">
+				The fifth stage is Sacrifice, uplifting marginalized groups and maintaining treatment to the majority is not mutually exclusive.</br>
+				Although some might assume that increasing equity requires sacrificing fairness and giving “special” favors to minorities, that is not the case because fairness requires treating people equitably—which may entail treating people differently, but in a way that makes sense. </br>
+				Thus, even if small sacrifices might be made, it would still benefit the whole community. </br>
+			</p>
+		</div>
+		<script src = "{{url_for('static', filename= 'js/tabs.js')}}"></script>
+		</br>
+		<div class="a"><img src="{{url_for('static', filename= 'images/comic.jpg')}}"  style="width:900px;height:500px;"></div>
+	
+	</div>
+
+	<div id="About" class="tabcontent">
+		<font face = "Courier">
+		<div class="a">
+		<header style= "font-size: 40px"> <u> Who We Are </u> </header></font><br />
+		</div>
+		<p style= "font-size: 20px">
+			Here at Developing Diversity, we have a passion for data analysis, and we believe in the value of quantification. 
+			Often, visualizing exactly what a problem looks like is the push in the right direction that ultimately leads to a solution. 
+			And, after over a year of quarantine, job loss and economic turmoil, we know that the world is in dire need of solutions.
+		</p>
+		<p  style= "font-size: 20px">
+			So, during ExploreHacks 2021, we began developing a website with a data analysis software to quantify companies’ levels of diversity, equity, and inclusion (DEI). </br>
+			Here, we work with companies’ employee data to assess diversity and find hidden bias, which we use to provide concrete tips on how to reduce bias and increase DEI. </br>
+			In doing this, we hope to create a sense of community and belonging within a workplace, so that no one will be undervalued or mistreated, effectively creating a better tomorrow for all. </br>
+		</p>
+
+		<div class="a">
+		<img src= "{{url_for('static', filename= 'images/diversity-removebg-preview.png')}}" style="width:1000px;height:500px;">
+		</div>
+		</br>
+		<font face = "Courier"><header style= "font-size: 35px"> <u> <b>Why Do Diversity, Equity, and Inclusion Matter? </b></u> </header></font><br />
+		<p  style= "font-size: 20px">
+			Because two heads are better than one. </br>
+			Because when an office, school, or movie set becomes an echo chamber for a single demographic, everyone else is drowned out. </br>
+			Valuable ideas and creative solutions are muffled, and cries for equality are silenced as they come. </br>
+			Diversity matters because regardless of race, skin color, gender, sexual orientation, or financial status, everyone’s voices deserve to be heard. </br>
+		</p>
+		<font face = "Courier"><h1 style= "font-size: 30px"> <b> But diversity alone isn't enough. </b> </h1> </font>
+		<p  style= "font-size: 20px">
+			Having some minority employees or a few female administrators isn’t enough if their work isn’t being pushed forward or valued. </br>
+			If these marginalized voices aren’t being amplified to the same volume as everyone else’s, then that’s not inclusion. </br>
+			That’s tokenism––just a symbolic action that squeezes in some people from underrepresented groups, without truly valuing their contributions.</br>
+		</p>
+		<font face = "Courier"><h1 style= "font-size: 30px"> <b>Inclusion is just as necessary as diversity </b> </h1> </font>
+		<p  style= "font-size: 20px">
+			Inclusion is what actively allows for open dialogue and promotes creativity, making companies more representative and in-tune to their consumers’ needs. </br>
+			Beyond just the moral reasons for increasing diversity, it has been proven that more inclusive companies are more successful! </br>
+			When companies establish inclusive business cultures and policies, they are more likely to report 59.1% increases in creativity, innovation, and openness, and 37.9% better assessment of consumer interest and demand. </br>
+			But with the undying systems of oppression in the United States that rob people of opportunities right under our noses, creating diversity and inclusion is much easier said than done. </br>
+			It’s not just a one-time “Everyone is equally valued and considered at this company now!” </br>
+			It’s not a rule that can be announced and then followed.</br>
+		</p>
+		<font face = "Courier"><h1 style= "font-size: 30px"> <b>Diversity and Inclusion have to be built. </b> </h1> </font>
+		<p  style= "font-size: 20px">
+			Systems that increase equity have to be created, enforced, and advertised to the people who need them. </br>
+			They need to be flexible and change to fit the organization’s social climate, and they need to be modeled based on the requests of the people they are made for. </br>
+		</p>
+		<div class="a">
+		
+		<img src="{{url_for('static', filename= 'images/deivenndiagram.png')}}"  style="width:700px;height:600px;">
+		</div> </br>
+		<font face = "Courier"><header style= "font-size: 40px"> <u> <b> So,Start With Us </b> </u> </header></font><br />
+		<p  style= "font-size: 20px">
+			Reprogramming the culture of a workplace to become richer and more inclusive is no easy task, so our data analysis software helps companies clearly see the level of diversity, equity, and inclusion present within them. </br>
+			After our algorithms quantify their levels of DEI, they can turn their attention to our Solutions tab. </br>
+			There, we provide ways for companies to become more equitable, such as blind hiring methods and employee feedback systems. </br>
+		</p>
+		<div class="a">
+		<img src="{{url_for('static', filename= 'images/Success-removebg-preview.png')}}" style="width:700px;height:500px;">
+		</div> </br>
+		<p  style= "font-size: 20px">
+			However, even with all of our data, we stress that the benefits of DEI cannot be obtained if a company is just recruiting new employees for the sake of meeting a quota. </br>
+			True DEI is intrinsically marked by the understanding that people of every background are valuable and should be appreciated. </br>
+		</p>
+		<div class="a">
+		<p style= "font-size: 50px ; color:blue"> <a href="https://www.theraleighregister.com/survey-monkey6.html"> <u>Remember, change starts with you!  </a></u></p>
+		</div>
+	</div>
+	<script src = "{{url_for('static', filename= 'js/tabs.js')}}"></script>
+	</body>
+</html>
