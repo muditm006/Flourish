@@ -264,11 +264,12 @@ def inclusion_print(csv):
 
 """------------------------------------------------------------------------------------------------------""" 
 
+#diversity graph algorihtm
 def diversity(csv):
     df = pd.read_csv(csv)
     diversity_score = 5
 
-    # gender
+    # creates a pi graph for gender demographics
     total_males = sum(csv, 'Sex', 'M')
     num_rows = df.shape[0]
     percentage_male = total_males / num_rows * 100
@@ -277,7 +278,7 @@ def diversity(csv):
     percentage_female = total_females / num_rows * 100
     pi_graph(csv, "Sex", "Number of Males vs. Females")
     
-    # race
+    # creates a pi graph for race demographics
     pi_graph(csv, "RaceDesc", "Race Distribution")
     num_races = df.RaceDesc.nunique()
     # creates a sorted list of the percentages of each race
@@ -290,10 +291,13 @@ def diversity(csv):
     percent_list = [percent_white, percent_black, percent_hisp, percent_asian, percent_mixed, percent_amerind]
     percent_list.sort()
 
+#equity graph algorihtm
 def equity(csv):
     df = pd.read_csv(csv)
+    #calculates the average salary
     average_salary = int(df['Salary'].mean())
     equity_score = 6
+    #creates a box and whisker plot for Correlation Between Employee Gender and Salary
     box_and_whisker(csv, "Sex", "Salary", "Correlation Between Employee Gender and Salary")
     grouped_df_sex = df.groupby("Sex")
     # creates data frame of averages, grouped by sex
@@ -311,6 +315,7 @@ def equity(csv):
     mixed_avg_salary = round(race_mean_df.at["Two or more races", "Salary"])
     amerind_avg_salary = round(race_mean_df.at["American Indian or Alaska Native", "Salary"])
 
+#inclusion graph algorithm
 def inclusion(csv):
     df = pd.read_csv(csv)
     inclusion_score = 7
