@@ -4,6 +4,7 @@
 		<meta charset= "utf-8">
 		<title> Flourish </title>
 		<link rel="shortcut icon" href="{{url_for('static', filename= 'images/Flourish.gif')}}" type="image/x-icon">
+		<link rel="shortcut icon" href="{{url_for('static', filename= 'images/test_gif4.gif')}}" type="image/x-icon">
 		<style>
 			div.b
 			{
@@ -90,17 +91,15 @@
 			  display: none;
 			  padding: 100px 20px;
 			}
-			
-		
-			
-			#Home {background-color: #181818;}
+
+ 			#Home { background-image:url('static/images/test_gif4.gif'); background-size:120%; background-attachment: fixed;}
 			#About {background-color: #ffbdef;}
 			#Analytics {background-color: #71EFA3;}
 			#Solutions {background-color: #a6f2e7;}
-			
+
 		</style>
 	</head>
-	<body style="background-color:#71EFA3;">
+	<body>
 		<!--<div class="a">
 		<font face = "Brush Script MT" size = "5">
 		<header style= "font-size: 100px;">
@@ -113,18 +112,18 @@
 	<button class="tablink" onclick="openPage('Solutions', this, 'black')">Solutions</button>
 	<div id="Home" class="tabcontent">
 	  <center>
-	  <h1 style= "font-size:30px; color: white"> 
+	  <h1 style= "font-size:30px; color: white">
 	  <font face = "Courier">
 	  Welcome to <span style= "font-size: 60px"><font face= "Lucida Handwriting">Flourish </span></font></font>
 	  </h1>
-	  <img class="animated-gif" src = "{{url_for('static', filename= 'images/Flourish.gif')}}" ></img>
+		  <img class="animated-gif" src="{{url_for('static', filename= 'images/Flourish.gif')}}"/>
 	  <font face = "Courier">
 	  <h1 style= "font-size:40px; color: white">
 	  "Growing Your Company Through Inclusion!"
 	  </h1>
 	  </font>
 	  </center>
-	  
+
 	</div>
 
 	<div id="Analytics" class="tabcontent">
@@ -149,14 +148,14 @@
 	<div id="Solutions" class="tabcontent">
 		<div class="a"><font face = "Courier"><header style= "font-size: 40px"> <u> How To Make Your Business More Diverse Today </u> </header></font></div></br>
 		</br>
-		<font face = "Courier"><header style= "font-size: 35px"> <b>How to Increase Diversity: </b> </header></font></br> 
-		<p style= "font-size: 20px"> 
+		<font face = "Courier"><header style= "font-size: 35px"> <b>How to Increase Diversity: </b> </header></font></br>
+		<p style= "font-size: 20px">
 		To begin with, highlight diversity in your company’s career page and offer targeted scholarships/internships and diverse mentorships. </br>
 		Diversity and cultural sensitivity training would also be beneficial. </br>
 		Ask employees to refer job candidates they know from under-represented groups in your company and offer rewards or bonuses for recommending diverse candidates who join the company. </br></p>
 		<div class="a"><img src = "{{url_for('static', filename= 'images/People-removebg-preview.png')}}" style="width:900px;height:400px;"></div>
 		<font face = "Courier"><header style= "font-size: 35px"> <b>How to Increase Inclusivity: </b> </header></font></br>
-		<p style= "font-size: 20px"> 
+		<p style= "font-size: 20px">
 		First, educate managers about the importance of inclusion, since managers act as the bridge between employees and management.
 		This can be done through workshops or training sessions that work to combat unconscious bias, improving the work environment (for example, adding gender neutral bathrooms), and having an employee feedback system. </br>
 		Then, create a system to hold employees accountable, such as a diversity panel, and monitor employee experiences. </br>
@@ -179,7 +178,7 @@
 		  <button class="tablinkss" onclick="openCity(event, 'Stage 3')"style="height:50px;width:200px; font-size: 18px; background-color: #dde54d">Empathy</button>
 		  <button class="tablinkss" onclick="openCity(event, 'Stage 4')"style="height:50px;width:200px; font-size: 18px; background-color: #95ec7a">Strategy</button>
 		  <button class="tablinkss" onclick="openCity(event, 'Stage 5')"style="height:50px;width:200px; font-size: 18px; background-color: #a6acf2">Sacrifice</button>
-		 
+
 		 </div>
 		</div>
 
@@ -190,7 +189,7 @@
 		</div>
 
 		<div id="Stage 2" class="tabcontents" style= "background-color: #d7955b">
-			<p style="font-size:20px"> 
+			<p style="font-size:20px">
 				The second stage is Root-Cause Analysis, in which the company must locate the problems main source. </br>
 				For example, the problem of racism may be caused by psychological factors (such as cognitive bias), but it mostly results from structural factors (such as established laws, institutional practices, and cultural norms). </br>
 				If a workplace targets and blames individuals for racism without taking a step back and seeing if their organizational structure is contributing to the discrimination, it will fail to increase equity.</br>
@@ -218,7 +217,7 @@
 		<script src = "{{url_for('static', filename= 'js/tabs.js')}}"></script>
 		</br>
 		<div class="a"><img src="{{url_for('static', filename= 'images/comic.jpg')}}"  style="width:900px;height:500px;"></div>
-	
+
 	</div>
 
 	<div id="About" class="tabcontent">
@@ -227,8 +226,8 @@
 		<header style= "font-size: 40px"> <u> Who We Are </u> </header></font><br />
 		</div>
 		<p style= "font-size: 20px">
-			Here at Flourish, we have a passion for data analysis, and we believe in the value of quantification. 
-			Often, visualizing exactly what a problem looks like is the push in the right direction that ultimately leads to a solution. 
+			Here at Flourish, we have a passion for data analysis, and we believe in the value of quantification.
+			Often, visualizing exactly what a problem looks like is the push in the right direction that ultimately leads to a solution.
 			And, after over a year of quarantine, job loss and economic turmoil, we know that the world is in dire need of solutions.
 		</p>
 		<p  style= "font-size: 20px">
@@ -269,7 +268,7 @@
 			They need to be flexible and change to fit the organization’s social climate, and they need to be modeled based on the requests of the people they are made for. </br>
 		</p>
 		<div class="a">
-		
+
 		<img src="{{url_for('static', filename= 'images/deivenndiagram.png')}}"  style="width:700px;height:600px;">
 		</div> </br>
 		<font face = "Courier"><header style= "font-size: 40px"> <u> <b> So,Start With Us </b> </u> </header></font><br />
