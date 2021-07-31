@@ -9,11 +9,11 @@ import os
 
 color = sns.color_palette()
 py.init_notebook_mode(connected=True)
-# get_ipython().run_line_magic('matplotlib', 'inline')
 pio.renderers.default = 'browser'
 
 
-# open the text file to see
+#shows analysis of all the variables in the dataset
+#opens the text file 
 def run_profile_report(csv):
     df = pd.read_csv(csv)
     profile = df.profile_report(title="Demographic Analysis",
@@ -31,7 +31,7 @@ def sum(csv, column, value):
     result = (df[column].values == value).sum()
     return result
 
-
+#creates the pi graph for column of your choice
 def pi_graph(csv, column, graph_title):
     df = pd.read_csv(csv)
     dist = df[column].value_counts()
@@ -42,7 +42,7 @@ def pi_graph(csv, column, graph_title):
     fig.update_traces(marker=dict(colors=colors, line=dict(color='#000000', width=2)))
     fig.show()
 
-
+#creates the box and whisker plot for column of your choice
 def box_and_whisker(csv, x_axis, y_axis, title):
     df = pd.read_csv(csv)
     fig = px.box(df, x=x_axis, y=y_axis)
@@ -51,7 +51,7 @@ def box_and_whisker(csv, x_axis, y_axis, title):
     fig.update_layout(title_text=title)
     fig.show()
 
-
+#creates the scatter plot for column of your choice
 def scatter_plot(csv, horizontal_axis, vertical_axis, plot_title):
     df = pd.read_csv(csv)
     fig = px.scatter(df, x=horizontal_axis, y=vertical_axis)
@@ -63,17 +63,22 @@ def scatter_plot(csv, horizontal_axis, vertical_axis, plot_title):
     
 """------------------------------------------------------------------------------------------------------"""
 
+#diversity algorithm
 def diversity_print(csv):
     df = pd.read_csv(csv)
     diversity_score = 5
 
-    # gender
+    # calculates percentage of males
     total_males = sum(csv, 'Sex', 'M')
     num_rows = df.shape[0]
     percentage_male = total_males / num_rows * 100
+
+     # calculates percentage of females
     total_females = sum(csv, 'Sex', 'F')
     num_rows = df.shape[0]
     percentage_female = total_females / num_rows * 100
+
+    # writes the results to a text file and then opens it in a new tab
     f = open("divesity.txt", "w")
     f.write("<title>Diversity Report</title><header style= 'font-size: 50px'> <center>Diversity Report </center></header><font face = 'Courier'><body style= 'font-size: 20px ;background-color: #d7955b' ><p>")
     f.close()
@@ -89,7 +94,7 @@ def diversity_print(csv):
     else:
         f.write("You have a great gender ratio in your company! </br></br>")
 
-    # race
+    # calculates the number of races present in the company
     num_races = df.RaceDesc.nunique()
     # creates a sorted list of the percentages of each race
     percent_white = sum(csv, "RaceDesc", "White") / num_rows * 100
@@ -100,7 +105,7 @@ def diversity_print(csv):
     percent_amerind = sum(csv, "RaceDesc", "American Indian or Alaska Native") / num_rows * 100
     percent_list = [percent_white, percent_black, percent_hisp, percent_asian, percent_mixed, percent_amerind]
     percent_list.sort()
-
+     # writes the results to a text file and then opens it in a new tab
     if num_races < 5:
         f.write(
             "Consider hiring diversely. In your business, you only have representation from <u>%d</u>races.</br> Workplace diversity is key to success in your business, whether for different perspectives, unique approaches,increased creativity, or valuable insights that can increase DEI, productivity and profits within your company.</br></br>" % num_races)
@@ -123,11 +128,14 @@ def diversity_print(csv):
 
 """------------------------------------------------------------------------------------------------------"""
 
+#equity algorithm
 def equity_print(csv):
     f = open("equity.txt", "w")
     df = pd.read_csv(csv)
+    # calculates the mean of the salaries in the company
     average_salary = int(df['Salary'].mean())
     average_salary_formatted = "{:,}".format(average_salary)
+     # writes the results to a text file and then opens it in a new tab
     f.write("<title>Equity Report</title> <center><header style= 'font-size: 50px'>Equity Report</header> </center><font face = 'Courier'> </br><body style= 'font-size: 20px ; background-color: #71EFA3'><p>")
     f.close()
     f= open("equity.txt", "a")
@@ -140,6 +148,7 @@ def equity_print(csv):
     fem_avg_salary_formatted = "{:,}".format(fem_avg_salary)
     male_avg_salary = round(mean_df.at["M", "Salary"])
     male_avg_salary_formatted = "{:,}".format(male_avg_salary)
+     # writes the results to a text file and then opens it in a new tab
     if fem_avg_salary < male_avg_salary - 2000:
         f.write("The average salary for females in your company is <u>$" + str(format(fem_avg_salary_formatted)) + "</u> and the average salary for males in your company is <u>$" + str(format(male_avg_salary_formatted)) + "</u>. </br></br>Your average male salary is greater than that of females, so it is important to consider if you are giving more job opportunities to males, or if you are promoting one gender more than the other. </br> </br>Please remember that your company's productivity will increase if you provide everyone with an equitable chance of succeeding.</br></br>")
         equity_score = equity_score - 1
@@ -154,7 +163,8 @@ def equity_print(csv):
     asian_avg_salary = round(race_mean_df.at["Asian", "Salary"])
     mixed_avg_salary = round(race_mean_df.at["Two or more races", "Salary"])
     amerind_avg_salary = round(race_mean_df.at["American Indian or Alaska Native", "Salary"])
-
+    
+    # writes the results to a text file and then opens it in a new tab
     if (hisp_avg_salary < white_avg_salary - 2000):
         f.write("Consider looking into the salaries of your Hispanic employees, as the average salary for Hispanic employees is lower than that of white employees. </br></br>")
         equity_score = equity_score - 1
@@ -171,7 +181,7 @@ def equity_print(csv):
         equity_score = equity_score - 1
     else:
         f.write("There is no significant racial inequities in your employees' salary, but we encourage you to head to the Solutions Tab for ideas on how to become even more inclusive! </br></br>")
-
+     # writes the results to a text file and then opens it in a new tab
     f.write(" </br><center> <b> <span style='font-size: 20px'>YOUR EQUITY SCORE: On a scale of 0-6 (6 being the most equitable), you have a score of <u>" + str(equity_score) + "</u>. </span></b></center>")
     f.write("</br> </p> </body></font>")
     f.close()
@@ -183,6 +193,7 @@ def equity_print(csv):
 
 """------------------------------------------------------------------------------------------------------"""
 
+#inclusion algorihtm
 def inclusion_print(csv):
     f = open("inclusion.txt", "w")
     f.write("<title>Inclusion Report</title><body style= 'background-color: #a6f2e7'><center><header style= 'font-size: 50px'>Inclusion Report</header></center></br><font face = 'Courier'><p style= 'font-size: 20px'>")
@@ -190,8 +201,7 @@ def inclusion_print(csv):
     f= open("inclusion.txt", "a")
     df = pd.read_csv(csv)
     inclusion_score = 7
-    # demographic vs. satisfaction
-
+    # demographic (race) vs. satisfaction statistics
     grouped_df_race = df.groupby("RaceDesc")
     race_mean_df = grouped_df_race.mean()
     white_avg_satisf = round(race_mean_df.at["White", "EmpSatisfaction"])
@@ -200,7 +210,7 @@ def inclusion_print(csv):
     asian_avg_satisf = round(race_mean_df.at["Asian", "EmpSatisfaction"])
     mixed_avg_satisf = round(race_mean_df.at["Two or more races", "EmpSatisfaction"])
     amerind_avg_satisf = round(race_mean_df.at["American Indian or Alaska Native", "EmpSatisfaction"])
-
+    # writes the results to a text file and then opens it in a new tab
     if (hisp_avg_satisf < white_avg_satisf):
         f.write("Your Hispanic employees may be less satisfied with their work environment than your white employees. </br></br>Try to think of ways to make the workplace more inclusive of them, and see our Solutions Tab for suggestions. </br></br>")
         inclusion_score = inclusion_score - 1
@@ -218,12 +228,12 @@ def inclusion_print(csv):
         inclusion_score = inclusion_score - 1
     else:
         f.write("Your employees are equally satisfied regardless of race, so look to the box and whisker plot we've provided to help you improve employee satisfaction as a whole. </br></br>")
-
+    # demographic (sex) vs. satisfaction statistics
     grouped_df_sex = df.groupby("Sex")
     mean_df = grouped_df_sex.mean()
     fem_avg_satisf = round(mean_df.at["F", "EmpSatisfaction"])
     male_avg_satisf = round(mean_df.at["M", "EmpSatisfaction"])
-
+    # writes the results to a text file and then opens it in a new tab
     if fem_avg_satisf < male_avg_satisf:
         f.write("Your female employees seem to be less satisfied than your male employees. </br>This can be solved by creating a more inclusive environment through open discussions and reflection. </br>Please see our Solutions Tab for a more in-depth recommendation.</br> </br>")
         inclusion_score = inclusion_score - 1
@@ -236,7 +246,7 @@ def inclusion_print(csv):
     # engagement by gender
     fem_avg_engage = round(mean_df.at["F", "EngagementSurvey"])
     male_avg_engage = round(mean_df.at["M", "EngagementSurvey"])
-
+    # writes the results to a text file and then opens it in a new tab
     if fem_avg_engage < male_avg_engage:
         f.write("Your female employees seem to be less engaged than their male counterparts. </br>It's important for all employees to feel comfortable speaking up, and lower engagement from a specific group will reduce innovation.  </br>Check out our Solutions Tab to solve this problem!</br> </br>")
         inclusion_score = inclusion_score - 1
