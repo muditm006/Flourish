@@ -1,7 +1,7 @@
 # Flourish
 Hello!
 
-    If you're reading this, Flourish™ has officially submitted their entry
+If you're reading this, Flourish™ has officially submitted their entry
 for UniGlobe Hacks 2021. The instructions to view the site and the included data
 analytics are as follows:
 
@@ -28,7 +28,7 @@ analytics are as follows:
        |-----------------------------------------------------------------------|
 
 
-    We hope you see the value in this project and the importance of the data analysis we
+We hope you see the value in this project and the importance of the data analysis we
 have done. Please be sure to fill out the survey link at the bottom of the About page
 once you are finished looking through the Analytics and Solutions pages. We would love
 your feedback!
